@@ -1,6 +1,4 @@
-# WS_structural-design
-
-Workshop on Structural Design with COMPAS
+# WS structural design
 
 **Schedule**
 
@@ -31,6 +29,7 @@ Workshop on Structural Design with COMPAS
 >
 > * On Windows: ``%USERPROFILE%\Anaconda3``
 > * On Mac: ``~/Anaconda3``
+>
 
 ---
 
@@ -268,7 +267,21 @@ python -m compas_rhino.install -v 5.0
 
 ## Case study: HiLo shell
 
-*Under construction...*
+Structural design is not just about form finding.
+Using the equilibrium data of the cablenet-and-fabric formwork of the HiLo shell,
+we will generate the actual geometrical data of the components of the roof.
+
+We will take a closer look at the structure of the equilibrium data,
+and do the following exercises:
+
+* Visualize the data in Rhino.
+* Offset the cablenet geometry to generate the fabric surface.
+* Generate shear connectors along the normals of the surface.
+* Create the volume of the first concrete layer.
+* Add insulation blocks.
+* Identify support zones.
+* Lay pipes in a spiraling pattern.
+
 
 ---
 
