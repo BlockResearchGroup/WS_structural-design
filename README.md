@@ -75,7 +75,7 @@ git clone https://github.com/BlockResearchGroup/WS_structural-design.git
 
 ## Installation
 
-**Install the latest released version of COMPAS (`0.5.1`) using `conda`**
+**Install the latest released version of COMPAS using `conda`**
 
 ```bash
 conda config --add channels conda-forge
@@ -97,6 +97,16 @@ Launch the interactive Python interpreter and import `compas`, `compas_rhino`, `
 If no error messages appear and the COMPAS version is correct, you're good to go.
 Type `exit()` to quit the interpreter.
 
+**Configure your editor**
+
+Detailed instructions can be found here:
+
+*   Sublime Text 3: https://compas-dev.github.io/main/environments/sublimetext.html
+*   VS Code: https://compas-dev.github.io/main/environments/vscode.html
+
+Once everything is set up, run `verify_editor.py` to check the setup.
+If this prints `0.5.1` in the Terminal window,your editor is properly configured.
+
 **Install COMPAS for Rhino**
 
 To make the installed COMPAS packages available in Rhino run the following on the command line
@@ -117,14 +127,6 @@ Rhino is properly configured.
 >
 > To run a script in Rhino, just type `RunPythonScript` at the Rhino command prompt
 > and select the script you want to run.
-
-**Configure your editor**
-
-*   Sublime Text 3: https://compas-dev.github.io/main/environments/sublimetext.html
-*   VS Code: https://compas-dev.github.io/main/environments/vscode.html
-
-Finally, run `verify_editor.py` to check the setup.
-If this prints `0.5.1` in the Terminal window,your editor is properly configured.
 
 ## Examples
 
@@ -151,7 +153,13 @@ If this prints `0.5.1` in the Terminal window,your editor is properly configured
 
 ## Installing from source
 
-Install the latest unreleased version of COMPAS from the cloned Github repo in a separate Python *virtual environment*.
+Installing COMPAS "from source" allows you to always work off the very latest
+code in the COMPAS framework, even before it is released in a new version.
+During your PhD, this is the preferred way to use the framework, provided you regularly
+(at least once a week) synchronize your local copy of the repository.
+
+We will install the latest unreleased version of COMPAS from the cloned Github repo
+in a separate Python *virtual environment*, called `unreleased`.
 
 **Clone the COMPAS repo**
 
@@ -232,8 +240,8 @@ cd compas
 **Create and activate a virtual environment**
 
 ```bash
-conda create -n contrib
-conda activate contrib
+conda create -n contribute
+conda activate contribute
 ```
 
 **Create an editable installation**
@@ -251,25 +259,95 @@ python -m compas_rhino.install -v 5.0
 
 **Exercise**
 
-*Under construction...*
+Find a piece of undocumented code, update the docstring, and submit a pull request.
+
+## Other installation procedures
+
+* Pinned versions: ``conda install COMPAS=0.5.1``
+* Environment files: ``conda env create -f workshop.yml``
 
 ---
 
 ## Make your own package
 
-*Under construction...*
+**Navigate to the container for your package**
 
-## Install `compas_fofin` from source
+*On Windows*
 
-*Under construction...*
+```bash
+mkdir %USERPROFILE%\Code\me
+cd %USERPROFILE%\Code\me
+```
+
+*On Mac*
+
+```bash
+mkdir ~/Code/me
+cd ~/Code/me
+```
+
+**Use the cookiecutter**
+
+```bash
+pip install cookiecutter
+```
+
+```bash
+cookiecutter gh:BlockResearchGroup/cookiecutter-compas-package
+```
+
+Just follow the instructions. Provide `compas_fofin` whn asked for the project slug.
+
+**Install your package**
+
+```bash
+cd compas fofin
+pip instal -r requirements-dev.txt
+```
+
+**Install it for Rhino**
+
+```bash
+python -m compas_rhino.install -v 5.0 -p compas_fofin
+```
+
+**Build the docs**
+
+```bash
+invoke docs
+```
+
+> **Note**
+>
+> The other `invoke` commands are
+> * `clean`
+> * `release`
+>
+
+**Add a CommmandPlugin**
+
+```bash
+cd ui
+cookiecutter gh:BlockResearchGroup/cookiecutter-rhinopythonplugin
+```
+
+Again, just follow the instructions...
+
+**Install the plugin**
+
+```bash
+python -m compas_rhino.install_plugin -v 5.0 FoFin{...}
+```
+
+Restart Rhino and type `FoFin` at the command prompt to see the available commands. 
 
 ---
 
-## Case study: HiLo shell
+## Exercises: Structural geometry of the HiLo shell
 
 Structural design is not just about form finding.
 Using the equilibrium data of the cablenet-and-fabric formwork of the HiLo shell,
-we will generate the actual geometrical data of the components of the roof.
+we will generate the actual geometrical data of (some of) the components of the roof.
 
 We will take a closer look at the structure of the equilibrium data,
 and do the following exercises:
@@ -281,7 +359,6 @@ and do the following exercises:
 * Add insulation blocks.
 * Identify support zones.
 * Lay pipes in a spiraling pattern.
-
 
 ---
 
