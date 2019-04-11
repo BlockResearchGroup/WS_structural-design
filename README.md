@@ -305,6 +305,10 @@ cd compas fofin
 pip instal -r requirements-dev.txt
 ```
 
+```bash
+>>> import compas_fofin
+```
+
 **Install it for Rhino**
 
 ```bash
