@@ -9,6 +9,7 @@ from compas_rhino.artists import MeshArtist
 from compas_rhino.selectors import VertexSelector
 from compas_rhino.modifiers import VertexModifier
 
+
 # make a control mesh
 mesh = Mesh.from_polyhedron(6)
 

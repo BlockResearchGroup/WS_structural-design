@@ -5,6 +5,7 @@ from compas.datastructures import Network
 from compas.plotters import NetworkPlotter
 from compas.datastructures import network_dr
 
+
 # path to the sample file
 DATA = os.path.join(os.path.dirname(__file__), '..', 'data')
 FILE = os.path.join(DATA, 'lines.obj')

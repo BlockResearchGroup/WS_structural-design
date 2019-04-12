@@ -4,6 +4,7 @@ from compas.datastructures import Network
 from compas.topology import shortest_path
 from compas.plotters import NetworkPlotter
 
+
 # path to the sample file
 DATA = os.path.join(os.path.dirname(__file__), '..', 'data')
 FILE = os.path.join(DATA, 'grid_irregular.obj')

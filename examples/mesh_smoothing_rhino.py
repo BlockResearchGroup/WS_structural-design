@@ -12,6 +12,7 @@ from compas_rhino.conduits import LinesConduit
 from compas_rhino.geometry import RhinoSurface
 from compas_rhino.artists import MeshArtist
 
+
 # make a mesh datastructure from a Rhino mesh object
 guid = compas_rhino.select_mesh()
 mesh = mesh_from_guid(Mesh, guid)

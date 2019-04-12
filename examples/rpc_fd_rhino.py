@@ -3,6 +3,7 @@ from compas.datastructures import Mesh
 from compas.rpc import Proxy
 from compas_rhino.artists import MeshArtist
 
+
 # path to the sample file
 DATA = os.path.join(os.path.dirname(__file__), '..', 'data')
 FILE = os.path.join(DATA, 'faces.obj')

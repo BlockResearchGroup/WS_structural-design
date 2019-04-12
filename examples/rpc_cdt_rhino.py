@@ -3,6 +3,7 @@ from compas.datastructures import Mesh
 from compas.rpc import Proxy
 from compas_rhino.artists import MeshArtist
 
+
 # make the proxy server for remote procedure calls ro compas.geometry
 proxy = Proxy('compas.geometry')
 
