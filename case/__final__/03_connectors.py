@@ -23,16 +23,20 @@ for key, attr in mesh.vertices(True):
         continue
 
     # skip vertices that have a constraint
+    if attr['constraint']:
+        continue
 
     # start and end point of the connector
     p1 = mesh.vertex_coordinates(key)
+    n = mesh.vertex_normal(key)
+    p2 = add_vectors(p1, scale_vector(n, (0.02 + 0.06 + 0.1 + 0.03 + 0.2 + 0.02)))
 
     # connector "pipe" drawing data as a dict
     connectors.append({
-        'points' : [p1, p2],     # points along the pipe
-        'color'  : (255, 0, 0),  # the pipe color
-        'name'   : ,             # name of the pipe indicating the vertex it is connected to
-        'radius' : 0.0025        # the pipe radius
+        'points' : [p1, p2],
+        'color'  : (255, 0, 0),
+        'name'   : "connector.{}".format(key),
+        'radius' : 0.0025
     })
 
 compas_rhino.xdraw_pipes(connectors, layer="Connectors", clear=True)
