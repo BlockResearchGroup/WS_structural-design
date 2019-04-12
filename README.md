@@ -263,7 +263,8 @@ Find a piece of undocumented code, update the docstring, and submit a pull reque
 
 ## Other installation procedures
 
-* Pinned versions: ``conda install COMPAS=0.5.1``
+* Pinned Python versions: ``conda create -n blender python=3.5.3 COMPAS python.app``
+* Pinned COMPAS versions: ``conda install COMPAS=0.5.1``
 * Environment files: ``conda env create -f workshop.yml``
 
 ---

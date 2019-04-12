@@ -42,4 +42,4 @@ for index, (u, v, attr) in enumerate(mesh.edges(True)):
 artist = MeshArtist(mesh, layer="Mesh::FD")
 artist.clear_layer()
 artist.draw_vertices()
-artist.draw()
+artist.draw_mesh()

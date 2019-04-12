@@ -69,4 +69,4 @@ for key, attr in mesh.vertices(True):
 
 # draw the result
 artist = MeshArtist(mesh, layer='mesh-out')
-artist.draw()
+artist.draw_mesh()

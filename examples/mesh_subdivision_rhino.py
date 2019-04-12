@@ -51,4 +51,4 @@ subd.attributes['name'] = 'Mesh'
 artist.mesh = subd
 artist.layer = 'SubdModeling::Mesh'
 artist.clear_layer()
-artist.draw()
+artist.draw_mesh()
