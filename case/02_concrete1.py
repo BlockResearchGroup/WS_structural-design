@@ -24,8 +24,8 @@ edos = idos.copy()
 # offset the intrados from the cablenet
 # by 2cm in the direction of the corresponding cablenet vertex normal
 
-# offset the intrados from the intrados
-# by 2cm in the direction of the corresponding cablenet vertex normal
+# offset the extrados from the intrados
+# by 6cm in the direction of the corresponding cablenet vertex normal
 
 # ==============================================================================
 # Concrete volume

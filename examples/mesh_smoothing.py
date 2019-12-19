@@ -1,7 +1,7 @@
 import os
 from compas.datastructures import Mesh
 from compas.datastructures import mesh_smooth_centroid
-from compas.plotters import MeshPlotter
+from compas_plotters import MeshPlotter
 
 
 # make a callback

@@ -1,6 +1,6 @@
 import os
 from compas.datastructures import Network
-from compas.plotters import NetworkPlotter
+from compas_plotters import NetworkPlotter
 from compas.topology import shortest_path
 from compas.utilities import pairwise
 
